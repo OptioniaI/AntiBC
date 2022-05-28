@@ -1,0 +1,18 @@
+local Structure = game:GetService("Workspace").Structure
+
+if game:GetService("Workspace").Structure:FindFirstChild("AntiBC") then game:GetService("Workspace").Structure:FindFirstChild("AntiBC"):Destroy() end
+
+Part = Instance.new("Part", Structure)
+Part.Name = "AntiBC"
+Part.Anchored = true
+Part.CastShadow = false
+Part.CanCollide = false
+Part.Transparency = 1
+Part.Color = Color3.fromRGB(195, 0, 0)
+Part.Size = Vector3.new(2048, 50, 2048)
+
+while task.wait() do
+    Part.CFrame = Structure.SpawnLocation.CFrame * CFrame.new(0, 36.25, 0)
+    task.wait(0.1)
+    Part.CanCollide = true
+end
