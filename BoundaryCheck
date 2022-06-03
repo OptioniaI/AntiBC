@@ -1,10 +1,9 @@
-if game:GetService("Workspace").Structure:FindFirstChild("AntiBC") then game:GetService("Workspace").Structure:FindFirstChild("AntiBC"):Destroy() end
+if game:GetService("Workspace"):FindFirstChild("Boundary") then game:GetService("Workspace"):FindFirstChild("Boundary"):Destroy() end
 
-local Structure = game:GetService("Workspace").Structure
+local Boundary = Instance.new("Folder", game.Workspace)
+Boundary.Name = "Boundary"
 
-Structure.Baseplate.CastShadow = false
-
-Part = Instance.new("Part", Structure)
+Part = Instance.new("Part", Boundary)
 Part.Name = "AntiBC"
 Part.Anchored = true
 Part.CastShadow = false
@@ -12,6 +11,6 @@ Part.CanCollide = false
 Part.Transparency = 1
 Part.Color = Color3.fromRGB(195, 0, 0)
 Part.Size = Vector3.new(2048, 50, 2048)
-Part.CFrame = Structure.SpawnLocation.CFrame * CFrame.new(0, 38.995, 0)
+Part.CFrame = CFrame.new(-0.5, 38.895, -0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 task.wait(0.1)
 Part.CanCollide = true
